@@ -6,10 +6,10 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # make sure apt is up to date
 RUN apt-get update --fix-missing
 RUN apt-get install -y curl
-RUN apt-get install -y build-essential libssl-dev libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan
+RUN apt-get install -y build-essential libssl-dev libnss-mdns libavahi-compat-libdnssd-dev samba-common wakeonlan telnet
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 8
+ENV NODE_VERSION 8.1.2
 
 # Install nvm with node and npm
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash \
