@@ -3,6 +3,8 @@ FROM homeassistant/home-assistant
 # Replace shell with bash so we can source files
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
+RUN echo "deb http://ftp.us.debian.org/debian/ unstable main contrib non-free" >> /etc/apt/sources.list
+
 # make sure apt is up to date
 RUN apt-get update --fix-missing
 RUN apt-get install -y curl
